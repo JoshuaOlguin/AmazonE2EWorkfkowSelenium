@@ -7,7 +7,7 @@ namespace AutomatedScript.Tests
     [TestFixture]
     public class AmazonTestCases : TestInitialize
     {
-        
+
         /// <summary>
         /// Validates the end-to-end shopping workflow on Amazon, including search, product selection, price verification, cart operations, and item removal.
         /// </summary>
@@ -30,7 +30,7 @@ namespace AutomatedScript.Tests
 
             Driver.Navigate().GoToUrl("https://www.amazon.com/");
             Home homeWebPage = new Home(Driver, Wait);
-            homeWebPage.ContinueShopping();
+            homeWebPage.StayOnAmazon();
             homeWebPage.SearchFor(itemName);
 
             bool titleContainsItem = Wait.Until(d => d.Title.Contains(itemName));
@@ -74,13 +74,13 @@ namespace AutomatedScript.Tests
         /// 9. Confirms the shopping cart is empty
         /// </remarks>
         [Test]
-     public void ValidateEndToEndShoppingWorkflow_PlayStation5()
-     {
+        public void ValidateEndToEndShoppingWorkflow_PlayStation5()
+        {
             string itemName = "PlayStation 5 Disc Edition Console";
 
             Driver.Navigate().GoToUrl("https://www.amazon.com/");
             Home homeWebPage = new Home(Driver, Wait);
-            homeWebPage.ContinueShopping();
+            homeWebPage.StayOnAmazon();
             homeWebPage.SearchFor(itemName);
 
             bool titleContainsItem = Wait.Until(d => d.Title.Contains(itemName));
