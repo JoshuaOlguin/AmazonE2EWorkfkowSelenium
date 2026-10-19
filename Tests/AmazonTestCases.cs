@@ -30,6 +30,7 @@ namespace AutomatedScript.Tests
 
             Driver.Navigate().GoToUrl("https://www.amazon.com/");
             Home homeWebPage = new Home(Driver, Wait);
+            homeWebPage.ContinueShopping();
             homeWebPage.StayOnAmazon();
             homeWebPage.SearchFor(itemName);
 
@@ -80,6 +81,7 @@ namespace AutomatedScript.Tests
 
             Driver.Navigate().GoToUrl("https://www.amazon.com/");
             Home homeWebPage = new Home(Driver, Wait);
+            homeWebPage.ContinueShopping(); 
             homeWebPage.StayOnAmazon();
             homeWebPage.SearchFor(itemName);
 
